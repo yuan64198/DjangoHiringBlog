@@ -23,12 +23,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'sh1n_3m71p1%sjwj_8c-uxeb&fxk_-*p(hvg)&#&fhfu)9m^t8'
-
+#SECRET_KEY = 'sh1n_3m71p1%sjwj_8c-uxeb&fxk_-*p(hvg)&#&fhfu)9m^t8'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://mydjangoemploymentwebsite.herokuapp.com/']
 
 
 # Application definition
