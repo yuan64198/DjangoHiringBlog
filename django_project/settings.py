@@ -27,7 +27,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #SECRET_KEY = 'sh1n_3m71p1%sjwj_8c-uxeb&fxk_-*p(hvg)&#&fhfu)9m^t8'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['https://mydjangoemploymentwebsite.herokuapp.com/']
 
