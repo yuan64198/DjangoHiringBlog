@@ -37,4 +37,4 @@ class Candidate(models.Model):
 		return "{} - {}".format(self.name, self.apply_to)
 
 	def get_absolute_url(self):
-   		return reverse('blog-home')
+		return reverse('post-detail', kwargs = {'pk': self.apply_to.pk})

@@ -35,7 +35,14 @@
                 <a class="mr-2">{{ candidate.email }}</a>
 
                 <div style="float:right; text-align:right">
-                    <a class="bnt btn-primary btn-sm mt-1 mb-1" href="#">{{ candidate.status }}</a>
+                    {% if candidate.status == "pending" %}
+                        <a class="bnt btn-warning btn-sm mt-1 mb-1" href="{% url 'candidate-update' post_id=object.id pk=candidate.id %}">{{ candidate.status }}</a>
+
+                    {% elif candidate.status == "accepted" %}
+                        <a class="bnt btn-success btn-sm mt-1 mb-1" href="{% url 'candidate-update' post_id=object.id pk=candidate.id %}">{{ candidate.status }}</a>
+                    {% else %}
+                        <a class="bnt btn-danger btn-sm mt-1 mb-1" href="{% url 'candidate-update' post_id=object.id pk=candidate.id %}">{{ candidate.status }}</a>
+                    {% endif %}
                 </div>
 
             </article>

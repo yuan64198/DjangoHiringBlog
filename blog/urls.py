@@ -18,5 +18,7 @@ urlpatterns = [
     path('post/<int:pk>/update', PostUpdateView.as_view(), name = 'post-update'),
     path('post/<int:pk>/delete', PostDeleteView.as_view(), name = 'post-delete'),
     path('about/', views.about, name = 'blog-about'),
-    path('post/<int:pk>/candidate/', CandidateCreateView.as_view(), name = 'candidate-create'),
+    path('post/<int:post_id>/', include('candidates.urls')),
+    #path('post/<int:pk>/candidate/', CandidateCreateView.as_view(), name = 'candidate-create'),
+    #path('post/<int:pk>/candidate/update', CandidateUpdateView.as_view(), name = 'candidate-update'),
 ]

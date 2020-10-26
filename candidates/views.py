@@ -28,4 +28,15 @@ class CandidateCreateView(CreateView):
         form.instance.apply_to = self.apply_to
         return super().form_valid(form)
 
+    def get_absolute_url(self):
+        return reverse('post-detail', kwargs={'pk': self.pk})
 
+
+
+class CandidateUpdateView(UpdateView):
+	model = Candidate
+	fields = ['status']
+
+
+	def get_absolute_url(self):
+		return reverse('blog/about.html', kwargs = {'pk': self.apply_to})
