@@ -61,7 +61,8 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['position_name', 'text_decription', 'min_age', 'max_age', 'state', 'salary', 'n_openings']
+    #fields = ['position_name', 'text_decription', 'min_age', 'max_age', 'state', 'salary', 'n_openings']
+    fields = ['position_name', 'text_decription', 'min_age', 'max_age', 'city', 'salary', 'n_openings']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -69,7 +70,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['position_name', 'text_decription', 'min_age', 'max_age', 'state', 'salary', 'n_openings']
+    #fields = ['position_name', 'text_decription', 'min_age', 'max_age', 'state', 'salary', 'n_openings']
+    fields = ['position_name', 'text_decription', 'min_age', 'max_age', 'city', 'salary', 'n_openings']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
