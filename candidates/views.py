@@ -18,7 +18,7 @@ class CandidateCreateView(CreateView):
         Overridden so we can make sure the `Ipsum` instance exists
         before going any further.
         """
-        self.apply_to = get_object_or_404(Post, pk=kwargs['pk'])
+        self.apply_to = get_object_or_404(Post, pk=kwargs['post_id'])
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
@@ -28,15 +28,7 @@ class CandidateCreateView(CreateView):
         form.instance.apply_to = self.apply_to
         return super().form_valid(form)
 
-    def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'pk': self.pk})
-
-
 
 class CandidateUpdateView(UpdateView):
 	model = Candidate
 	fields = ['status']
-
-
-	def get_absolute_url(self):
-		return reverse('blog/about.html', kwargs = {'pk': self.apply_to})

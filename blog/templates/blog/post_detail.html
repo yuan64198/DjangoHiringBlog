@@ -18,7 +18,7 @@
                 <a class="mr-2">Location: {{ post.location }}</a>
                 <a class="mr-2">Salary: {{ post.salary }} a year</a>
                 <div style="float:right; text-align:right">
-                    <a class="bnt btn-primary btn-sm mt-1 mb-1" href="{% url 'candidate-create' object.id %}">Apply</a>
+                    <a class="bnt btn-primary btn-sm mt-1 mb-1" href="{% url 'candidate-create' post_id=object.id %}">Apply</a>
                 </div>
             </div>
             <h2><a class="article-title">{{ post.position_name }}</a></h2>
