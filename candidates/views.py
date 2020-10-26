@@ -11,8 +11,8 @@ from blog.models import Post
 
 class CandidateCreateView(CreateView):
     model = Candidate
-    #fields = ['name', 'age', 'gender', 'mobile', 'email', 'city', 'expected_salary', 'will_relocate']
-    fields = ['name', 'age', 'gender', 'mobile', 'email', 'state', 'city', 'expected_salary', 'will_relocate']
+    fields = ['name', 'age', 'gender', 'mobile', 'email', 'city', 'expected_salary', 'will_relocate']
+    #fields = ['name', 'age', 'gender', 'mobile', 'email', 'state', 'city', 'expected_salary', 'will_relocate']
 
     def dispatch(self, request, *args, **kwargs):
         """
