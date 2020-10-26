@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from blog.models import Post
+from localflavor.us.us_states import STATE_CHOICES
+from localflavor.us.models import USStateField
 
 GENDER_MALE = 'male'
 GENDER_FEMALE = 'female'
@@ -24,7 +26,9 @@ class Candidate(models.Model):
 	age = models.IntegerField()
 	gender = models.CharField(max_length=20, choices=GENDER_CHOICES, default=GENDER_MALE)
 	mobile = models.CharField(max_length=20)
-	email = models.EmailField(max_length = 254, null=True)
+	email = models.EmailField(max_length = 254)
+	
+	state = USStateField(choices = STATE_CHOICES, default = ('AL', 'Alabama'))
 	city = models.CharField(max_length=30)
 	expected_salary = models.IntegerField()
 	will_relocate = models.BooleanField(default=False)

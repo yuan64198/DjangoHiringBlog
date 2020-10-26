@@ -36,11 +36,11 @@ class Post(models.Model):
     # author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     position_name = models.CharField(max_length=100)
-    text_decription = models.TextField()
+    text_decription = models.TextField(null=True, blank=True)
     min_age = models.IntegerField(default=18)
     max_age = models.IntegerField(default=65)
     salary = models.IntegerField()
-    location = USStateField(choices = STATE_CHOICES)
+    state = USStateField(choices = STATE_CHOICES, default = ('AL', 'Alabama'))
     n_openings = models.IntegerField(default=0)
 
     author = models.ForeignKey(User, on_delete=models.CASCADE)
