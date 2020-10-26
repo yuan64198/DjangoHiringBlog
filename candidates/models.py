@@ -35,7 +35,7 @@ class Candidate(models.Model):
 
 	status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=STATUS_PENDING)
 
-	apply_to = models.ForeignKey(Post, on_delete=models.CASCADE, null=True)
+	apply_to = models.ForeignKey(Post, on_delete=models.CASCADE)
 
 	def __str__(self):
 		return "{} - {}".format(self.name, self.apply_to)
