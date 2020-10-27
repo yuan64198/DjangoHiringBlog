@@ -6,13 +6,20 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+
 from .models import Candidate
 from blog.models import Post
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
-class CandidateCreateView(CreateView):
+class CandidateCreateView(SuccessMessageMixin, CreateView):
     model = Candidate
+    
     fields = ['name', 'age', 'gender', 'mobile', 'email', 'city', 'expected_salary', 'will_relocate']
     #fields = ['name', 'age', 'gender', 'mobile', 'email', 'state', 'city', 'expected_salary', 'will_relocate']
+    
+    success_url = '/'
+    success_message = 'You have successfully applied to the position! The company will contect you soon!'
 
     def dispatch(self, request, *args, **kwargs):
         """
