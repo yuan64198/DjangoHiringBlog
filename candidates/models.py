@@ -1,6 +1,8 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 from django.urls import reverse
 from blog.models import Post
+from django.contrib.auth.models import User
 from localflavor.us.us_states import STATE_CHOICES
 from localflavor.us.models import USStateField
 
@@ -36,6 +38,7 @@ class Candidate(models.Model):
 	status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=STATUS_PENDING)
 
 	apply_to = models.ForeignKey(Post, on_delete=models.CASCADE)
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	def __str__(self):
 		return "{} - {}".format(self.name, self.apply_to)

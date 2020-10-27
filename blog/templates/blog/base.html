@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main3.css' %}">
 
     {% if title %}
         <title> Django Job Search Engine - {{ title }}</title>
@@ -61,7 +61,7 @@
                 {% endif %}
 
                 <form class="search-field" action="{% url 'search_posts' %}" method="get">
-                    <input name="input" type="text" name="search" placeholder="Search..">
+                    <input class="search-input" name="input" type="text" name="search" placeholder="Search..">
                 </form>
 
                 {% block content %}{% endblock %}

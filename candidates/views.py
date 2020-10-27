@@ -33,6 +33,8 @@ class CandidateCreateView(SuccessMessageMixin, CreateView):
         """
         Overridden to add the ipsum relation to the `Lorem` instance.
         """
+        form.instance.user = self.request.user
+        
         form.instance.apply_to = self.apply_to
         return super().form_valid(form)
 

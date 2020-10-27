@@ -18,7 +18,9 @@
                 <a class="mr-2">Location: {{ post.location }}</a>
                 <a class="mr-2">Salary: {{ post.salary }} a year</a>
                 <div style="float:right; text-align:right">
-                    <a class="bnt btn-primary btn-sm mt-1 mb-1" href="{% url 'candidate-create' post_id=object.id %}">Apply</a>
+                    {% if user.is_authenticated %}
+                        <a class="bnt btn-primary btn-sm mt-1 mb-1" href="{% url 'candidate-create' post_id=object.id %}">Apply</a>
+                    {% endif %}
                 </div>
             </div>
             <h2><a class="article-title">{{ post.position_name }}</a></h2>
