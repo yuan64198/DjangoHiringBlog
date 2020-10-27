@@ -28,7 +28,7 @@ class Candidate(models.Model):
 	mobile = models.CharField(max_length=20)
 	email = models.EmailField(max_length = 254)
 	
-	#state = USStateField(choices = STATE_CHOICES, default = ('AL', 'Alabama'))
+	#state = USStateField(choices = STATE_CHOICES)
 	city = models.CharField(max_length=30)
 	expected_salary = models.IntegerField()
 	will_relocate = models.BooleanField(default=False)

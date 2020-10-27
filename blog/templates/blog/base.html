@@ -61,19 +61,30 @@
                 {% endif %}
                 {% block content %}{% endblock %}
             </div>
-            <!-- <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="content-section">
-                    <h3>Our Sidebar</h3>
-                    <p class='text-muted'>You can put any information here you'd like.
-                    <ul class="list-group">
-                        <li class="list-group-item list-group-item-light">Latest Posts</li>
-                        <li class="list-group-item list-group-item-light">Announcements</li>
-                        <li class="list-group-item list-group-item-light">Calendars</li>
-                        <li class="list-group-item list-group-item-light">etc</li>
-                    </ul>
-                    </p>
+                    <h3>Tags</h3>
+                    Company Tags:
+                    <li class="list-group-item list-group-item-light">
+                        <a class="btn btn-info" href="{% url 'user-posts' 'Microsoft' %}">Microsoft</a>
+                        <a class="btn btn-info" href="{% url 'user-posts' 'Apple' %}">Apple</a>
+                        <a class="btn btn-info" href="{% url 'user-posts' 'Amazon' %}">Amazon</a>
+                        <a class="btn btn-info" href="{% url 'user-posts' 'Indeed' %}">Indeed</a>
+                        <a class="btn btn-info" href="{% url 'user-posts' 'Google' %}">Google</a>
+                    </li>
+
+                    <!-- Position Tags:
+                    <li class="list-group-item list-group-item-light">
+                        <a class="btn btn-info" href="#">Engineer</a>
+                        <a class="btn btn-info" href="#">Scientist</a>
+                        <a class="btn btn-info" href="#">IOS</a>
+                        <a class="btn btn-info" href="#">Android</a>
+                    </li> -->
+                    <!-- <li class="list-group-item list-group-item-light">Announcements</li>
+                    <li class="list-group-item list-group-item-light">Calendars</li>
+                    <li class="list-group-item list-group-item-light">etc</li> -->
                 </div>
-            </div> -->
+            </div>
         </div>
     </main>
     

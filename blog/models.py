@@ -40,7 +40,7 @@ class Post(models.Model):
     min_age = models.IntegerField(default=18)
     max_age = models.IntegerField(default=65)
     salary = models.IntegerField()
-    #state = USStateField(choices = STATE_CHOICES, default = ('AL', 'Alabama'))
+    #state = USStateField(choices = STATE_CHOICES)
     city = models.CharField(max_length=30)
     n_openings = models.IntegerField(default=0)
 
