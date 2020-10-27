@@ -17,7 +17,7 @@
                     {% endif%}
                 </div>
                 <div class="article-metadata">
-                    <a class="mr-2">Location: {{ post.location }}</a>
+                    <a class="mr-2">Location: {{ post.city }}</a>
                     <a class="mr-2">Salary: {{ post.salary }} a year</a>
                 </div>
                 <h2><a class="article-title", href="{% url 'post-detail' post.id %}">{{ post.position_name }}</a></h2>
