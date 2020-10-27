@@ -45,9 +45,11 @@ class SearchPostListView(ListView):
     paginate_by = 5
 
     def get_queryset(self):
-        query = self.request.GET.get('q')
+        query = self.request.GET.get('input')
         if(query == None) :
-            return Post.objects.all()
+            query = self.kwargs.get('input')
+            if(query == None):
+                return Post.objects.all()
 
         # object_list = Post.objects.filter(
         #     position_name=query

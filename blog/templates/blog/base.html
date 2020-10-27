@@ -61,7 +61,7 @@
                 {% endif %}
 
                 <form class="search-field" action="{% url 'search_posts' %}" method="get">
-                    <input name="q" type="text" name="search" placeholder="Search..">
+                    <input name="input" type="text" name="search" placeholder="Search..">
                 </form>
 
                 {% block content %}{% endblock %}
@@ -71,20 +71,21 @@
                     <h3>Tags</h3>
                     <h5>Company Tags:</h5>
                     <li class="list-group-item list-group-item-light">
-                        <a class="btn btn-info" href="{% url 'user-posts' 'Microsoft' %}">Microsoft</a>
-                        <a class="btn btn-info" href="{% url 'user-posts' 'Apple' %}">Apple</a>
-                        <a class="btn btn-info" href="{% url 'user-posts' 'Amazon' %}">Amazon</a>
-                        <a class="btn btn-info" href="{% url 'user-posts' 'Indeed' %}">Indeed</a>
-                        <a class="btn btn-info" href="{% url 'user-posts' 'Google' %}">Google</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Microsoft' %}">Microsoft</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Apple' %}">Apple</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Amazon' %}">Amazon</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Indeed' %}">Indeed</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Google' %}">Google</a>
                     </li>
 
-                    <!-- Position Tags:
+                    <h5>Position Tags:</h5>
                     <li class="list-group-item list-group-item-light">
-                        <a class="btn btn-info" href="#">Engineer</a>
-                        <a class="btn btn-info" href="#">Scientist</a>
-                        <a class="btn btn-info" href="#">IOS</a>
-                        <a class="btn btn-info" href="#">Android</a>
-                    </li> -->
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Engineer' %}">Engineer</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Data Scientist' %}">Data Scientist</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Software' %}">Software</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'Android' %}">Android</a>
+                        <a class="btn btn-info" href="{% url 'search_posts_tag' 'IOS' %}">IOS</a>
+                    </li>
                     <!-- <li class="list-group-item list-group-item-light">Announcements</li>
                     <li class="list-group-item list-group-item-light">Calendars</li>
                     <li class="list-group-item list-group-item-light">etc</li> -->
