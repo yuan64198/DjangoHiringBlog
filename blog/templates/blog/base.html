@@ -13,9 +13,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
 
     {% if title %}
-        <title>Cartman Hiring - {{ title }}</title>
+        <title> Django Job Search Engine - {{ title }}</title>
     {% else %}
-        <title>Cartman Hiring</title>
+        <title>Django Job Search Engine</title>
     {% endif %}
 </head>
 <body>
@@ -59,6 +59,11 @@
                         </div>
                     {%  endfor %}
                 {% endif %}
+
+                <form class="search-field" action="{% url 'search_posts' %}" method="get">
+                    <input name="q" type="text" name="search" placeholder="Search..">
+                </form>
+
                 {% block content %}{% endblock %}
             </div>
             <div class="col-md-4">

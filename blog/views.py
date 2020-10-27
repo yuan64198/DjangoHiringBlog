@@ -8,6 +8,9 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from django.db.models import Q
+from django.contrib.postgres.search import SearchVector, SearchQuery
+
 from .models import Post
 from candidates.models import Candidate
 
@@ -35,7 +38,30 @@ class UserPostListView(ListView):
         return Post.objects.filter(author=user).order_by('-date_posted')
 
 
+class SearchPostListView(ListView):
+    model = Post
+    template_name = 'blog/search_posts.html' # <app>/<model>_<viewtype>.html
+    context_object_name = 'posts'
+    paginate_by = 5
 
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if(query == None) :
+            return Post.objects.all()
+
+        # object_list = Post.objects.filter(
+        #     position_name=query
+        # )
+        # object_list = Post.objects.filter(
+        #     position_name=query
+        # )
+
+        object_list = Post.objects.annotate(
+                search=SearchVector('position_name', 'author__username'),
+            ).filter(search=SearchQuery(query))
+
+
+        return object_list
 
 
 

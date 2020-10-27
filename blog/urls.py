@@ -6,6 +6,7 @@ from .views import (
     PostUpdateView,
     PostDeleteView,
     UserPostListView,
+    SearchPostListView,
 )
 from candidates.views import CandidateCreateView
 from . import views
@@ -21,4 +22,5 @@ urlpatterns = [
     path('post/<int:post_id>/', include('candidates.urls')),
     #path('post/<int:pk>/candidate/', CandidateCreateView.as_view(), name = 'candidate-create'),
     #path('post/<int:pk>/candidate/update', CandidateUpdateView.as_view(), name = 'candidate-update'),
+    path('search/', SearchPostListView.as_view(), name='search_posts'),
 ]
