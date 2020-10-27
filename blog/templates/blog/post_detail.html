@@ -28,8 +28,9 @@
 
         </div>
     </article>
-    <h2>Candidates List:</h2>
+    
     {% if object.author == user%}
+        <h3>Candidates List:</h3>
         {% for candidate in candidate_list %}
             <article class="media content-section">
                 <a class="mr-2">{{ candidate.name }}</a>
@@ -48,6 +49,30 @@
                 </div>
 
             </article>
+        {% endfor %}
+
+    {% else %}
+        <h3>Your Application Status:</h3>
+        {% for candidate in candidate_list %}
+            {% if candidate.user == user %}
+                <article class="media content-section">
+                    <a class="mr-2">{{ candidate.name }}</a>
+                    <a class="mr-2">{{ candidate.mobile }}</a>
+                    <a class="mr-2">{{ candidate.email }}</a>
+
+                    <div style="float:right; text-align:right">
+                        {% if candidate.status == "pending" %}
+                            <a class="bnt btn-warning btn-sm mt-1 mb-1" href="#">{{ candidate.status }}</a>
+
+                        {% elif candidate.status == "accepted" %}
+                            <a class="bnt btn-success btn-sm mt-1 mb-1" href="#">{{ candidate.status }}</a>
+                        {% else %}
+                            <a class="bnt btn-danger btn-sm mt-1 mb-1" href="#">{{ candidate.status }}</a>
+                        {% endif %}
+                    </div>
+
+                </article>
+            {% endif %}
         {% endfor %}
     {% endif%}
 
