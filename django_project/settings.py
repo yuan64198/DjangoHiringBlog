@@ -29,12 +29,13 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = ['https://mydjangohiringblog.herokuapp.com']
+ALLOWED_HOSTS = ['https://djangohiringapp.herokuapp.com', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'django_nose',
     'candidates.apps.CandidatesConfig',
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
@@ -46,6 +47,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+]
+
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+# Tell nose to measure coverage on the 'blog' and 'candidates' and 'users' apps
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-package=blog,users,candidates',
 ]
 
 MIDDLEWARE = [
