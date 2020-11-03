@@ -1,6 +1,7 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    <h1>About Page</h1>
+    <h1>About Info</h1>
+    <ol>
     <h2>Register and Login</h2>
     <p>On the right side of the menubar, you can register as the website's user if you don't have an account. It requires you to provide your username, email address and password. After registration, you can go to the profile page to change your photo. If you already have an account, you can sign in to your account by clicking the "sign in" button on the menubar. If you forget/lose  your password, use the "forget password" button in the sign in page to regain/reset your password.</p>
     <h2>Job Posting and Application</h2>
@@ -8,9 +9,10 @@
     <h2>Search and Tags</h2>
     <p>We provide basic search function in the website. In the text input bar, you can type the job key words to filter the posts. For example, type "Engineer" to get all the posts contains the word "Engineer". Also, on the right hand side of the web page, you can see several predefined tags. By clicking on the tags, it filter the posts by the tag's keyword for you.</p>
     <h2>Contact info</h2>
-    <li>
-        <a>Name: Chih-Yuan Huang</a>
-        <a>Email: yuan64198@gmail.com</a>
-        <a href = 'https://github.com/yuan64198'>Github: https://github.com/yuan64198</a>
-    </li>
+    <ul>
+        <li><a>Name: Chih-Yuan Huang</a></li>
+        <li><a>Email: yuan64198@gmail.com</a></li>
+        <li>Github: <a href = 'https://github.com/yuan64198'>https://github.com/yuan64198</a></li>
+    </ul>
+    </ol>
 {% endblock content%}
