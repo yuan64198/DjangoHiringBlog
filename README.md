@@ -1,6 +1,6 @@
 # Django Hiring Blog
 
-This project is a employment website implemented by Django. In this project, users can register and sign in to their accounts and edit their own profile. A company user can post job openings which list the details of the positions, and change the candidates' status as the hiring process going. A candidate user can apply to a job post, and check on the hiring status under the post page.
+This project is a employment website implemented using Django. In this project, users can register and sign in to their accounts and edit their own profile. A company user can post job openings which list the details of the positions, and change the candidates' status as the hiring process going. A candidate user can apply to a job post, and check on the hiring status under the post page.
 
 A user can also search for posts on the search bar to filter the posts with designated key words. A list of key words is also provided on the right side of home page to offer quick filtering.
 
